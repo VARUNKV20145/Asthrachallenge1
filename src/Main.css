@@ -52,9 +52,14 @@ div, p {
     outline: 0 none;
 }
 .Answerfield{
+    padding-left: 5px;
     position: relative;
-background-color: #fcee0a;
-    border-color: rgba(249, 235, 5, 0.1);
+    color: #00E6F6;
+background-color: rgba(252, 238, 10, 0.15);
+border-bottom: 5px solid rgb(249, 235, 5);
+    border-right:  5px solid rgb(249, 235, 5);
+    border-top: 1px solid rgba(249, 235, 5, 0.3);
+    border-left: 1px solid rgba(249, 235, 5, 0.3);
 top:80px;
     outline: none;
     left:100px;

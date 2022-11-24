@@ -53,11 +53,13 @@ div, p {
 }
 .Answerfield{
     position: relative;
+background-color: #fcee0a;
+    border-color: rgba(249, 235, 5, 0.1);
 top:80px;
     outline: none;
     left:100px;
     width: 280px;
-    height: 40px;
+    height: 60px;
     font-family: VT323;
     font-size: 25px;
 

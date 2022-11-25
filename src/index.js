@@ -1,14 +1,29 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-// import Main from './Main';
-import Challengetwo from './Challengetwo';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
+import Main from "./pages/Main";
 
+
+
+
+export default function App() {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Main />}/>
+
+
+
+
+            </Routes>
+        </BrowserRouter>
+    );
+}
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Challengetwo/>
+    <App/>
   </React.StrictMode>
 );
 

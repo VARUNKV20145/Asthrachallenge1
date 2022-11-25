@@ -15,7 +15,7 @@ function Main() {
 
             <div className="wrap-mid">
 
-                <button>Submit</button>
+                <button>SUBMIT</button>
             </div>
 
 

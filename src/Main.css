@@ -158,12 +158,12 @@ button, button::after {
     font-size: 25px;
 top:60px;
     left: 100px;
-    font-family: 'Bebas Neue', cursive;
+    font-family: VT323;
     background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
     border: 0;
     color: #fff;
     letter-spacing: 3px;
-    line-height: 68px;
+    line-height: 63px;
     box-shadow: 6px 0px 0px #00E6F6;
     outline: transparent;
     position: relative;
@@ -177,7 +177,7 @@ button::after {
     --slice-4: inset(40% -6px 43% 0);
     --slice-5: inset(80% -6px 5% 0);
 
-    content: 'Submit';
+    content: 'SUBMIT';
     display: block;
     position: absolute;
     top: 0;

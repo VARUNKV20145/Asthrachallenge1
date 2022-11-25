@@ -1,8 +1,8 @@
 import './Main.css';
-import {useNavigate} from "react-router-dom";
+
 
 function Main() {
-    const navigate=useNavigate()
+
     const navigatechallenge=()=>{
         window.location.href="https://asthrablackout.netlify.app/";
     }

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
-import Main from "./pages/Main";
+import Challengetwo from "./pages/Challengetwo";
 
 
 
@@ -11,7 +11,7 @@ export default function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Main />}/>
+                <Route path="/" element={<Challengetwo />}/>
 
 
 

@@ -3,9 +3,7 @@ import './Main.css';
 
 function Main() {
 
-    const navigatechallenge=()=>{
-        window.location.href="https://asthrablackout.netlify.app/";
-    }
+
     return (
         <div className="container">
 
@@ -20,7 +18,7 @@ function Main() {
 
             <div className="wrap-mid">
 
-                <button onClick ={navigatechallenge}>SUBMIT</button>
+                <button>SUBMIT</button>
             </div>
 
 

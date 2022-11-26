@@ -10,7 +10,7 @@ function Main() {
         setMessage(event.target.value);
     };
     const Anssubmit = () => {
-        if(message==''){
+        if(message===''){
             console.log("please type anything")
         }
         else {

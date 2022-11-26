@@ -35,7 +35,7 @@ import {useState} from "react";
     let response=200;
     // const options = {method: 'GET'};
     // let response = await fetch('https://oyster-app-cmvre.ondigitalocean.app/questions/?level=1', options);
-    if (response==200)
+    if (response===200)
     {//let q=response.json();
         console.log("Questions fetched");
     }

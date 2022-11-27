@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from "react-dom/client";
-import { Routes, Route, Router} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 import Main from "./pages/Main";
 import Login from "./pages/App";
@@ -10,13 +10,13 @@ import Login from "./pages/App";
 
 export default function App() {
     return (
-        <Router>
+        <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Login/>}>
+                <Route path="/" element={<Login/>}/>
                 <Route path="/challenge" element={<Main/>}/>
-                </Route>
+
             </Routes>
-        </Router>
+        </BrowserRouter>
     );
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));

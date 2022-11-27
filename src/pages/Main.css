@@ -74,9 +74,53 @@ top:80px;
     font-size: 25px;
 
 }
+.username{
+    padding-left: 5px;
+    position: relative;
+    color: #00E6F6;
+    background-color: rgba(252, 238, 10, 0.15);
+    border-bottom: 5px solid rgb(249, 235, 5);
+    border-right:  5px solid rgb(249, 235, 5);
+    border-top: 1px solid rgba(249, 235, 5, 0.3);
+    border-left: 1px solid rgba(249, 235, 5, 0.3);
+
+
+
+
+    top:80px;
+
+    outline: none;
+    left:100px;
+    width: 280px;
+    height: 60px;
+    font-family: VT323;
+    font-size: 25px;
+}
+.password{
+    padding-left: 5px;
+    position: relative;
+    color: #00E6F6;
+    background-color: rgba(252, 238, 10, 0.15);
+    border-bottom: 5px solid rgb(249, 235, 5);
+    border-right:  5px solid rgb(249, 235, 5);
+    border-top: 1px solid rgba(249, 235, 5, 0.3);
+    border-left: 1px solid rgba(249, 235, 5, 0.3);
+
+
+
+
+    top:95px;
+
+    outline: none;
+    left:100px;
+    width: 280px;
+    height: 60px;
+    font-family: VT323;
+    font-size: 25px;
+}
 
 p{position: relative;
-
+left:100px;
     font-size: 35px;
     font-family:'VT323';
 }
@@ -96,6 +140,7 @@ p{position: relative;
 }
 
 #quote {
+    left:150px;
     width: 100%;
     padding-bottom: 30px;
     position: relative;
@@ -148,7 +193,7 @@ p{position: relative;
 }
 &:hover {
      text-shadow: 0 0 13px #fff;
-     cursoir: hand;
+     cursor: hand;
  }
 
 

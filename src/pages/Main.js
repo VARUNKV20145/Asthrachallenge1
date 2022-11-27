@@ -1,69 +1,86 @@
 import './Main.css';
-import {useState} from "react";
+import {useEffect, useState} from "react";
+
+ function  Main () {
+     const [index,setIndex]=useState(0);
+     const [isLoading, setLoading] = useState(true);
+     const [tem,setTem]=useState({})
+     const [message, setMessage] = useState('');
+     const [wrong, setWrong] = useState('');
+     const [currentQuestion, setCurrentQuestion] = useState(0);
+
+     const handleChange = event => {
+         setMessage(event.target.value);
+     };
 
 
- function Main() {
-    const [message, setMessage] = useState(" ");
-    const [wrong, setWrong] = useState(" ");
-    const [currentQuestion, setCurrentQuestion] = useState(0);
-    const questions = {
-        "level": "1",
-        "level_name": null,
-        "questions": [
-            {
-                "question": "kjhgdsdfghjkjhfdsdfghjksfghjkjhgfdsdfghj",
-                "image_url": "",
-                "solved": false,
-                "answer": "SDFffGHJK",
-                "return_img": "",
-                "q_id": "qhcpibqyvb"
-            },
-            {
-                "question": "how do you doe?",
-                "image_url": "",
-                "solved": false,
-                "answer": "qwertyh",
-                "return_img": "",
-                "q_id": "bsyjasknef"
-            }
-        ]
-    }
+         useEffect( ()=> {
+             const options = {method: 'GET'};
+             const url='https://oyster-app-cmvre.ondigitalocean.app/questions/?level=1';
+             const fetchData = async() => {
 
-    const handleChange = event => {
-        setMessage(event.target.value);
-    };
-    let response=200;
-    // const options = {method: 'GET'};
-    // let response = await fetch('https://oyster-app-cmvre.ondigitalocean.app/questions/?level=1', options);
-    if (response===200)
-    {//let q=response.json();
-        console.log("Questions fetched");
-    }
-    else{
-        console.log("Fetch failed");
-    }
-    const Anssubmit = () => {
+                 await fetch(url, options)
+                     .then(async response => {
+                         if (response.ok) {
+                             return await response.json()
+                         }
+                         throw response;
+                     })
+                     .then(tem => {
+                         setTem(tem);
+                         console.log((tem.questions).length);
+                         console.log(tem);
+                         setLoading(false);
+                     })
+                     .catch(error => {
+                         console.log("Error fetching questions")
+                     })
+             }
+             fetchData();
+         },[]);
+    const Anssubmit = async () => {
         if (message === '') {
             console.log("please type something")
         } else {
+            const options = {method: 'GET'};
 
-            if (response === 200) {
-                const nextQuestion = currentQuestion + 1;
-                setCurrentQuestion(nextQuestion);
-                setMessage('')
+            const res = await fetch('https://oyster-app-cmvre.ondigitalocean.app/questions/validate?level=1&qid='+tem.questions[currentQuestion].q_id+'&answer='+tem.questions[currentQuestion].answer, options)
+            console.log(res.status);
+
+            if (res.status === 200) {
+            const limit=tem.questions.length;
+                 setWrong("Correct answer")
+
+                setTimeout(() => {
+                    setMessage('')
+                    setWrong(" ")
+                    console.log(limit);
+                    if(index<limit-1) {
+                        const nextQuestion = currentQuestion + 1;
+                        setCurrentQuestion(nextQuestion);
+                        setIndex(index+1)
+                    }
+                    else{
+                        setWrong("Challenge completed!")
+                    }
+
+                }, 1000);
+
+
             } else {
                 setWrong("Wrong answer");
             }
         }
+
     }
 
-
+if(isLoading){
     return (
         <div className="container">
 
             <div className="wrap-top">
                 <div id="quote">
-                    <p>{questions.questions[currentQuestion].question}</p>
+                    <p>Loading Questions</p>
                 </div>
                 <div id="author-source" className="clearfix">
                     <input className="Answerfield" type="text" autoFocus='True' value={message} onChange={handleChange}
@@ -82,5 +99,29 @@ import {useState} from "react";
 
     );
 }
+     return (
+         <div className="container">
+
+             <div className="wrap-top">
+                 <div id="quote">
+                     <p>{tem.questions[currentQuestion].question}</p>
+                 </div>
+                 <div id="author-source" className="clearfix">
+                     <input className="Answerfield" type="text" autoFocus='True' value={message} onChange={handleChange}
+                            required/>
+                 </div>
+             </div>
+
+             <div className="wrap-mid">
+
+                 <button onClick={Anssubmit}>SUBMIT</button>
+             </div>
+             <p>{wrong}</p>
+
+
+         </div>
+
+     );
+ }
 
 export default Main;

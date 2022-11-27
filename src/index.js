@@ -13,7 +13,7 @@ export default function App() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Login/>}/>
-                <Route path="challenge" element={<Main/>}/>
+                <Route path="/challenge" element={<Main/>}/>
 
 
 

@@ -1,6 +1,7 @@
 import './Main.css';
 import {useEffect, useState} from "react";
 
+
  function  Main () {
      const [index,setIndex]=useState(0);
      const [isLoading, setLoading] = useState(true);
@@ -14,12 +15,16 @@ import {useEffect, useState} from "react";
      };
 
 
-         useEffect( ()=> {
-             const options = {method: 'GET'};
-             const url='https://oyster-app-cmvre.ondigitalocean.app/questions/?level=1';
-             const fetchData = async() => {
 
-                 await fetch(url, options)
+         useEffect( ()=> {
+
+
+
+             const fetchData = async() => {
+                 const options = {method: 'GET', headers: {Authorization: 'Basic '+btoa(localStorage.getItem('username')+':'+localStorage.getItem('password'))}};
+
+
+                 await fetch('https://oyster-app-cmvre.ondigitalocean.app/questions?level=1', options)
                      .then(async response => {
                          if (response.ok) {
                              return await response.json()
@@ -28,8 +33,7 @@ import {useEffect, useState} from "react";
                      })
                      .then(tem => {
                          setTem(tem);
-                         console.log((tem.questions).length);
-                         console.log(tem);
+
                          setLoading(false);
                      })
                      .catch(error => {
@@ -40,12 +44,12 @@ import {useEffect, useState} from "react";
          },[]);
     const Anssubmit = async () => {
         if (message === '') {
-            console.log("please type something")
+            setWrong("please type something")
         } else {
-            const options = {method: 'GET'};
+            const options = {method: 'GET',headers: {Authorization: 'Basic '+btoa(localStorage.getItem('username')+':'+localStorage.getItem('password'))}};
 
             const res = await fetch('https://oyster-app-cmvre.ondigitalocean.app/questions/validate?level=1&qid='+tem.questions[currentQuestion].q_id+'&answer='+tem.questions[currentQuestion].answer, options)
-            console.log(res.status);
+
 
             if (res.status === 200) {
             const limit=tem.questions.length;

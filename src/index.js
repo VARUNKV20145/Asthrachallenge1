@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
-import Main from "./pages/Main";
-import Login from "./pages/App";
+import Main from "./Main";
+import Login from "./App";
 
 
 
@@ -12,8 +12,10 @@ export default function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Login/>}/>
-                <Route path="/challenge" element={<Main/>}/>
+                <Route path="/" element={<Login />}>
+                </Route>
+                <Route path="/Main" element={<Main />} ></Route>
+
 
             </Routes>
         </BrowserRouter>

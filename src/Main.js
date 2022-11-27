@@ -48,10 +48,11 @@ import {useEffect, useState} from "react";
         } else {
             const options = {method: 'GET',headers: {Authorization: 'Basic '+btoa(localStorage.getItem('username')+':'+localStorage.getItem('password'))}};
 
-            const res = await fetch('https://oyster-app-cmvre.ondigitalocean.app/questions/validate?level=1&qid='+tem.questions[currentQuestion].q_id+'&answer='+tem.questions[currentQuestion].answer, options)
+            const res = await fetch('https://oyster-app-cmvre.ondigitalocean.app/questions/validate?level=1&qid='+tem.questions[currentQuestion].q_id+'&answer='+message, options)
 
 
             if (res.status === 200) {
+                console.log(res.status)
             const limit=tem.questions.length;
                  setWrong("Correct answer")
 
@@ -71,9 +72,10 @@ import {useEffect, useState} from "react";
                 }, 1000);
 
 
-            } else {
+            } else if(res.status===202) {
                 setWrong("Wrong answer");
             }
+
         }
 
     }

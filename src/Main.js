@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 
 
  function  Main () {
-     const [title,setTitle]=useState("");
+     ;
      const [index,setIndex]=useState(0);
      const [isLoading, setLoading] = useState(true);
      const [tem,setTem]=useState({})

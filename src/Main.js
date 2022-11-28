@@ -16,6 +16,7 @@ import {useEffect, useState} from "react";
 
 
 
+
          useEffect( ()=> {
 
 
@@ -42,6 +43,7 @@ import {useEffect, useState} from "react";
              }
              fetchData();
          },[]);
+
     const Anssubmit = async () => {
         if (message === '') {
             setWrong("please type something")
@@ -79,8 +81,34 @@ import {useEffect, useState} from "react";
         }
 
     }
+     const anscheck = async () => {
+         console.log("anscheck")
+         const options = {method: 'GET',headers: {Authorization: 'Basic '+btoa(localStorage.getItem('username')+':'+localStorage.getItem('password'))}};
 
-if(isLoading){
+         const r = await fetch('https://oyster-app-cmvre.ondigitalocean.app/questions/check?level=1&qid='+tem.questions[currentQuestion].q_id, options)
+
+         if(r.status===200){
+             setCurrentQuestion(currentQuestion+1);
+             console.log("200");
+
+         }
+         else {
+             console.log("not resolved");
+         }
+
+
+
+
+     }
+     useEffect(() => {
+         const interval = setInterval(async () => {
+             await anscheck();
+         }, 5000);
+
+         return () => clearInterval(interval);
+     }, []);
+
+     if(isLoading){
     return (
         <div className="container">
 

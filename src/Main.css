@@ -64,7 +64,7 @@ border-bottom: 5px solid rgb(249, 235, 5);
 
 
 
-top:80px;
+    top:80px;
 
     outline: none;
     left:100px;
@@ -141,7 +141,9 @@ left:100px;
 
 #quote {
     left:150px;
-    width: 100%;
+    height: 500px;
+
+    width: 500px;
     padding-bottom: 30px;
     position: relative;
 
@@ -201,7 +203,23 @@ button, button::after {
     width: 280px;
     height: 60px;
     font-size: 25px;
-top:60px;
+    top: 60px;
+    left: 100px;
+    font-family: VT323;
+    background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+    border: 0;
+    color: #fff;
+    letter-spacing: 3px;
+    line-height: 63px;
+    box-shadow: 6px 0px 0px #00E6F6;
+    outline: transparent;
+    position: relative;
+}
+.submit::after {
+    top: 192px;
+    left: 236px;
+    font-size: 25px;
+    top:60px;
     left: 100px;
     font-family: VT323;
     background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
@@ -233,11 +251,54 @@ button::after {
     text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
     clip-path: var(--slice-0);
 }
+#submit::after{
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(80% -6px 0 0);
+    --slice-2: inset(50% -6px 30% 0);
+    --slice-3: inset(10% -6px 85% 0);
+    --slice-4: inset(40% -6px 43% 0);
+    --slice-5: inset(80% -6px 5% 0);
+
+    content: 'SUBMIT';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+    text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+    clip-path: var(--slice-0);
+}
 
 button:hover::after {
     animation: 1s glitch;
     animation-timing-function: steps(2, end);
 }
+#submit::after {
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(80% -6px 0 0);
+    --slice-2: inset(50% -6px 30% 0);
+    --slice-3: inset(10% -6px 85% 0);
+    --slice-4: inset(40% -6px 43% 0);
+    --slice-5: inset(80% -6px 5% 0);
+
+    content: 'SUBMIT';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+    text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+    clip-path: var(--slice-0);
+}
+#submit:hover::after {
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
+}
+
 
 @keyframes glitch {
     0% {
@@ -315,5 +376,9 @@ a {
     font-size: 1.05em;
     opacity: 1;
 }
+}
+img{
+    height: 300px;
+    width: 400px;
 }
 

@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 
 
  function  Main () {
+
      const [index,setIndex]=useState(0);
      const [isLoading, setLoading] = useState(true);
      const [tem,setTem]=useState({})
@@ -34,7 +35,7 @@ import {useEffect, useState} from "react";
                      })
                      .then(tem => {
                          setTem(tem);
-
+                         console.log( tem.questions[currentQuestion].image_url);
                          setLoading(false);
                      })
                      .catch(error => {
@@ -110,7 +111,7 @@ import {useEffect, useState} from "react";
 
      if(isLoading){
     return (
-        <div className="container">
+          <div className="container">
 
             <div className="wrap-top">
                 <div id="quote">
@@ -124,7 +125,7 @@ import {useEffect, useState} from "react";
 
             <div className="wrap-mid">
 
-                <button onClick={Anssubmit}>SUBMIT</button>
+                <button className="anssubmit" onClick={Anssubmit}>SUBMIT</button>
             </div>
             <p>{wrong}</p>
 
@@ -138,7 +139,7 @@ import {useEffect, useState} from "react";
 
              <div className="wrap-top">
                  <div id="quote">
-                     <p>{tem.questions[currentQuestion].question}</p>
+                     <img src={tem.questions[currentQuestion].image_url}/>
                  </div>
                  <div id="author-source" className="clearfix">
                      <input className="Answerfield" type="text" autoFocus='True' value={message} onChange={handleChange}
@@ -148,7 +149,7 @@ import {useEffect, useState} from "react";
 
              <div className="wrap-mid">
 
-                 <button onClick={Anssubmit}>SUBMIT</button>
+                 <button id="submit" onClick={Anssubmit}>SUBMIT</button>
              </div>
              <p>{wrong}</p>
 

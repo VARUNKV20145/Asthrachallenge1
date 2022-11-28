@@ -55,7 +55,7 @@ function Login() {
 
         <div className="wrap-mid">
 
-          <button  type="submit">SUBMIT</button>
+          <button className="submit"  type="submit">SUBMIT</button>
         </div>
 
         <p>{message}</p>

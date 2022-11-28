@@ -1,9 +1,9 @@
-import './Main.css';
+import './Login.css';
 import {useEffect, useState} from "react";
 
 
  function  Main () {
-
+     const [title,setTitle]=useState("");
      const [index,setIndex]=useState(0);
      const [isLoading, setLoading] = useState(true);
      const [tem,setTem]=useState({})
@@ -35,7 +35,7 @@ import {useEffect, useState} from "react";
                      })
                      .then(tem => {
                          setTem(tem);
-                         console.log( tem.questions[currentQuestion].image_url);
+                         console.log( tem.level_name);
                          setLoading(false);
                      })
                      .catch(error => {
@@ -111,23 +111,30 @@ import {useEffect, useState} from "react";
 
      if(isLoading){
     return (
+        <div className="con">
           <div className="container">
-
+              <p>{tem.level_name}</p>
             <div className="wrap-top">
+
                 <div id="quote">
+
                     <p>Loading Questions</p>
                 </div>
+
                 <div id="author-source" className="clearfix">
                     <input className="Answerfield" type="text" autoFocus='True' value={message} onChange={handleChange}
                            required/>
+                    <button className="anssubmit" onClick={Anssubmit}>SUBMIT</button>
+                </div>
                 </div>
             </div>
 
             <div className="wrap-mid">
 
-                <button className="anssubmit" onClick={Anssubmit}>SUBMIT</button>
+
             </div>
             <p>{wrong}</p>
+
 
 
         </div>

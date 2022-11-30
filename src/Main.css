@@ -417,7 +417,7 @@ height: 40px;
         color: #eb0005;
         text-shadow: none;
         top:100px;
-        left:150px;
+        left:10px;
     }
     img{object-fit:contain;
 display: flex;
@@ -428,23 +428,27 @@ top:40px;
         height: 300px;
         width: 400px;
         position: relative;
-        left: 160px;
+        left: 10px;
     }
     .Answerfield{
         display: flex;
         justify-content: center;
         align-items: center;
-        left:210px;
+        left:60px;
 
     }
     #submit{
         display: flex;
         justify-content: center;
         align-items: center;
-        left: 210px;
+        left: 60px;
         top: 300px;
     }
-
+#load{font-size: xx-large;
+    left:30px;
+    top:220px;
+    font-family: VT323;
+}
 }
 
 .Head {
@@ -454,7 +458,7 @@ top:40px;
     left: 50%;
 }
 .gli  {top:-250px;
-    left:170px;
+    left:5px;
     text-shadow: none;
     font-family: "Rubik Glitch", sans-serif;
     color: #ff013c;

@@ -48,7 +48,7 @@ tem.questions.map((item)=>
                     {item.question}
                 </h2>
             </a>
-            ) : <p>No Questions added</p>}
+            ) : <p id="quesload">DANGER: High Voltage!!!</p>}
 
         </div>
             </div>

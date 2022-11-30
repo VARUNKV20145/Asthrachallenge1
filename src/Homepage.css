@@ -308,3 +308,8 @@
         transform: rotateX(0deg) skewX(0deg);
     }
 }
+#quesload{
+    top:220px;
+    left:5px;
+    font-family: VT323;
+}

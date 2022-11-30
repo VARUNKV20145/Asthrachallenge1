@@ -141,13 +141,11 @@ const [img,setImg]=useState("")
 
                         <div id="quote">
 
-                            <p>Loading Questions</p>
+                            <p id="load">Don't panic... AHHHHH!</p>
                         </div>
 
                         <div id="author-source" className="clearfix">
-                            <input className="Answerfield" type="text" autoFocus='True' value={message} onChange={handleChange}
-                                   required/>
-                            <button className="anssubmit" onClick={Anssubmit}>submit</button>
+
                         </div>
                     </div>
                 </div>

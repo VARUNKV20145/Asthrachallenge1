@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+.front-wrap{
+    display:flex;
+    text-shadow: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(183deg, rgba(141,35,46,0.5) 1%, rgba(141,35,46,0) 60%),
+    linear-gradient(250deg, rgba(141,35,46,0) 21%, rgba(141,35,46,0.2) 20%, rgba(11,35,47,0.2) 50%),
+    linear-gradient(250deg, rgba(141,35,46,0) 23%, rgba(141,35,46,0.2) 20%, rgba(11,35,47,0.2) 50%),
+    linear-gradient(250deg, rgba(141,35,46,0) 25%, rgba(141,35,46,0.2) 20%, rgba(11,35,47,0.2) 50%),
+    repeating-linear-gradient(179deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1) 3px, rgba(0,0,0,0.1) 3px, rgba(0,0,0,0.1) 5px);
+    background-color: #0b232f;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Rubik Glitch';
+    color:#eb0005;
+    /* grid-row-gap: 5rem;
+    grid-column-gap: 5rem; */
+}
+.front-heading{
+    font-size: 4em;
+    padding-bottom: 2rem;
+    font-family: "Rubik Glitch";
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 35vw 35vw;
+    grid-template-rows: 20vh 20vh 20vh;
+    /* padding:10ch; */
+    grid-column-gap: 10vw;
+    grid-row-gap: 4vh;
+    font-family: VT323;
+}
+.tile-content{
+    font-size: 2em;
+    font-weight:initial;
+    font-family: "Rubik Glitch";
+    text-shadow: none;
+
+}
+.tile-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: available;
+    height:available;
+    padding: 1em;
+    color:#eb0005;
+    font-family: VT323;
+    background:rgb(0,0,0,0.2);
+    border-radius:.25em;
+    color:#eb0005;
+    text-decoration: none;
+    transition: transform 250ms ease-in-out;
+    border:.25ch solid #eb0005;
+}
+.tile-link:hover,.tile-link:focus{
+    transform: scale(1.05);
+}
+@media screen and (max-width: 480px) {
+    .tile-content{
+        font-size: 1.5em;
+    }
+    .tile-link{
+        width:60vw;
+    }
+   .grid-container{
+    display: flex;
+    flex-direction:column;
+    /*grid-template-columns: 35vw 35vw; */
+    /*grid-template-rows: 20vh 20vh 20vh; */
+    /* padding:10ch; */
+    /*grid-column-gap: 10vw; */
+    /*grid-row-gap: 4vh; */
+    font-family: VT323;
+    }
+    body{
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom:50px;
+        font-family: "Rubik Glitch";
+    }
+}
+@media(hover: hover) and (pointer: fine) {
+    .tile-link:hover {
+        transform: scale(1.05);
+    }
+}

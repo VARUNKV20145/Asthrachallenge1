@@ -166,6 +166,11 @@ const [img,setImg]=useState("")
     }
     return (
         <div className="container">
+            <div className="Head">
+                <div className="gli" data-text="BLACKOUT">BLACKOUT</div>
+
+
+            </div>
             {show? <p>{tem.question}</p>:<p></p>}
             <div className="wrap-top">
                 {copy&&<CopyToClipboard id="copy" value="Caution" text={"QSBzcGlkZXIgaXMgdHJ5aW5nIHRvIGJ1aWxkIGEgd2ViIGZvciBpdHNlbGYuIEl0IGRvdWJsZXMgdGhlIHdvcmsgZG9uZSBldmVyeSBkYXkuIElmIHRoZSBzcGlkZXIgY29tcGxldGVseSBidWlsdCB0aGUgd2ViIGluIDUwIGRheXMsIGhvdyBtYW55IGRheXMgZGlkIGl0IHRha2UgZm9yIHRoZSBzcGlkZXIgdG8gYnVpbGQgMjUlIG9mIHRoZSB3ZWI/"} onCopy={() => window.alert("Copied to Clipboard")}>

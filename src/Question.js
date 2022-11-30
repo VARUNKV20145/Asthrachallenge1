@@ -1,4 +1,4 @@
-import './Login.css';
+import './Main.css';
 import {useEffect, useState} from "react";
 import { useNavigate,useParams } from 'react-router-dom';
 
@@ -165,7 +165,7 @@ console.log("QSBzcGlkZXIgaXMgdHJ5aW5nIHRvIGJ1aWxkIGEgd2ViIGZvciBpdHNlbGYuIEl0IGR
                     <img alt="img" src={tem.image_url}/>
                 </div>
                 <div id="author-source" className="clearfix">
-                    <input className="Answerfield" type="text" autoFocus='True' value={message} onChange={handleChange}
+                    <input className="Answerfield" type="text" placeholder="Type your answer" autoFocus='True' value={message} onChange={handleChange}
                            required/>
                 </div>
             </div>

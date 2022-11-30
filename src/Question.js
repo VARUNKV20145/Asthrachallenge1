@@ -7,8 +7,8 @@ function  Question () {
 
     let { id } = useParams();
 
-
-
+const [show,setShow]=useState(true)
+const [img,setImg]=useState("")
     const [isLoading, setLoading] = useState(true);
     const [tem,setTem]=useState({})
 
@@ -43,8 +43,8 @@ console.log("QSBzcGlkZXIgaXMgdHJ5aW5nIHRvIGJ1aWxkIGEgd2ViIGZvciBpdHNlbGYuIEl0IGR
                     throw response;
                 })
                 .then(tem => {
-                    console.log(tem.questions);
                     setTem(tem);
+                    setImg(tem.image_url)
                     window.data=tem;
 
 
@@ -81,9 +81,12 @@ console.log("QSBzcGlkZXIgaXMgdHJ5aW5nIHRvIGJ1aWxkIGEgd2ViIGZvciBpdHNlbGYuIEl0IGR
 
                 setWrong("Correct answer");
 
+
                 setTimeout(() => {
+                    setShow(false)
+                    setImg(tem.return_img);
                     setWrong("Challenge completed");
-                    navigate('/home', {replace: true});
+
 
 
 
@@ -157,22 +160,24 @@ console.log("QSBzcGlkZXIgaXMgdHJ5aW5nIHRvIGJ1aWxkIGEgd2ViIGZvciBpdHNlbGYuIEl0IGR
     }
     return (
         <div className="container">
-            <p>{tem.question}</p>
+            {show? <p>{tem.question}</p>:<p></p>}
             <div className="wrap-top">
 
                 <div id="quote">
 
-                    <img alt="img" src={tem.image_url}/>
+                    <img alt="img" src={img}/>
                 </div>
+
                 <div id="author-source" className="clearfix">
+                    {show&&
                     <input className="Answerfield" type="text" placeholder="Type your answer" autoFocus='True' value={message} onChange={handleChange}
-                           required/>
+                           required/>}
                 </div>
             </div>
 
             <div className="wrap-mid">
-
-                <button id="submit" onClick={Anssubmit}>SUBMIT</button>
+                {show&&
+                <button id="submit" onClick={Anssubmit}>SUBMIT</button>}
             </div>
             <p>{wrong}</p>
 

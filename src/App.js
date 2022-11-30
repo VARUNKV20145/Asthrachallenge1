@@ -1,4 +1,4 @@
-import './Main.css';
+import './Login.css';
 import {useForm} from "react-hook-form";
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
@@ -33,6 +33,12 @@ function Login() {
     }
   return (
       <div className="container">
+          <div className="Head">
+              <div className="gli" data-text="BLACKOUT">BLACKOUT</div>
+
+
+          </div>
+          <h1 id="logintext">Login to continue</h1>
           <form onSubmit={handleSubmit(onSubmit)}>
         <div className="wrap-top">
 

@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+
 .clearfix:after {
     visibility: hidden;
     display: block;
@@ -60,11 +61,6 @@ border-bottom: 5px solid rgb(249, 235, 5);
     border-right:  5px solid rgb(249, 235, 5);
     border-top: 1px solid rgba(249, 235, 5, 0.3);
     border-left: 1px solid rgba(249, 235, 5, 0.3);
-
-
-
-
-    top:80px;
 
     outline: none;
     left:100px;
@@ -208,7 +204,7 @@ button, button::after {
     width: 280px;
     height: 60px;
     font-size: 25px;
-    top: 405px;
+    top: 120px;
     left: 100px;
     font-family: VT323;
     background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
@@ -386,7 +382,7 @@ img{
     height: 200px;
     width: 400px;
 }
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
     body{
         display: flex;
         flex-direction: column;

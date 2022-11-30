@@ -38,7 +38,7 @@ function Homepage() {
 
     return (
         <div className="front-wrap">
-        <h1 className="front-heading">BREAKOUT</h1>
+        <h1 className="front-heading">BLACKOUT</h1>
         <div className="grid-container">
             { tem && tem.questions.length > 0 ?
 tem.questions.map((item)=>

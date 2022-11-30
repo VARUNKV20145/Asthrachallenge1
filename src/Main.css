@@ -382,6 +382,25 @@ img{
     height: 200px;
     width: 400px;
 }
+#copy{position: absolute;
+
+color: #eb0005;
+    font-size:small;
+    font-family: VT323;
+    top:330px;
+height: 40px;
+    width: 50px;
+    left: 450px;
+    border: 1px solid #eb0005;
+    border-radius: 5px;
+
+    letter-spacing: 0px;
+    text-align: center;
+    background:transparent;
+
+
+    box-shadow: none;
+}
 @media (max-width: 600px) {
     body{
         display: flex;
@@ -400,7 +419,7 @@ img{
         top:100px;
         left:150px;
     }
-    img{
+    img{object-fit:contain;
 display: flex;
         flex-direction: column;
         justify-content: center;

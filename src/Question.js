@@ -1,11 +1,14 @@
 import './Main.css';
 import {useEffect, useState} from "react";
 import { useNavigate,useParams } from 'react-router-dom';
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 
 function  Question () {
-
+    const [copy,setCopy]=useState(false);
     let { id } = useParams();
+
+
 
 const [show,setShow]=useState(true)
 const [img,setImg]=useState("")
@@ -16,9 +19,7 @@ const [img,setImg]=useState("")
     const [wrong, setWrong] = useState('');
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const navigate= useNavigate();
-    if(id=="fhqclqvcxh"){
-console.log("QSBzcGlkZXIgaXMgdHJ5aW5nIHRvIGJ1aWxkIGEgd2ViIGZvciBpdHNlbGYuIEl0IGRvdWJsZXMgdGhlIHdvcmsgZG9uZSBldmVyeSBkYXkuIElmIHRoZSBzcGlkZXIgY29tcGxldGVseSBidWlsdCB0aGUgd2ViIGluIDUwIGRheXMsIGhvdyBtYW55IGRheXMgZGlkIGl0IHRha2UgZm9yIHRoZSBzcGlkZXIgdG8gYnVpbGQgMjUlIG9mIHRoZSB3ZWI/");
-    }
+
 
     const handleChange = event => {
         setMessage(event.target.value);
@@ -45,7 +46,12 @@ console.log("QSBzcGlkZXIgaXMgdHJ5aW5nIHRvIGJ1aWxkIGEgd2ViIGZvciBpdHNlbGYuIEl0IGR
                 .then(tem => {
                     setTem(tem);
                     setImg(tem.image_url)
-                    window.data=tem;
+                    if(id==="fhqclqvcxh"){
+                        setCopy(true);
+                    }
+                    else{
+                        setCopy(false);
+                    }
 
 
 
@@ -162,7 +168,10 @@ console.log("QSBzcGlkZXIgaXMgdHJ5aW5nIHRvIGJ1aWxkIGEgd2ViIGZvciBpdHNlbGYuIEl0IGR
         <div className="container">
             {show? <p>{tem.question}</p>:<p></p>}
             <div className="wrap-top">
+                {copy&&<CopyToClipboard id="copy" value="Caution" text={"QSBzcGlkZXIgaXMgdHJ5aW5nIHRvIGJ1aWxkIGEgd2ViIGZvciBpdHNlbGYuIEl0IGRvdWJsZXMgdGhlIHdvcmsgZG9uZSBldmVyeSBkYXkuIElmIHRoZSBzcGlkZXIgY29tcGxldGVseSBidWlsdCB0aGUgd2ViIGluIDUwIGRheXMsIGhvdyBtYW55IGRheXMgZGlkIGl0IHRha2UgZm9yIHRoZSBzcGlkZXIgdG8gYnVpbGQgMjUlIG9mIHRoZSB3ZWI/"} onCopy={() => window.alert("Copied to Clipboard")}>
 
+                    <p className="copy">Don't Touch</p>
+                </CopyToClipboard>}
                 <div id="quote">
 
                     <img alt="img" src={img}/>

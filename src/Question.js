@@ -204,7 +204,7 @@ setRedirect(false);
                 {show&&
                 <button id="submit" onClick={Anssubmit}>SUBMIT</button>}
             </div>
-            <p>{wrong}</p>
+            <p id="error">{wrong}</p>
 
 
         </div>

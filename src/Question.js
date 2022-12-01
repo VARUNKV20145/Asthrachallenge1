@@ -9,7 +9,7 @@ function  Question () {
     let { id } = useParams();
 
 
-
+const[redirect,setRedirect]=useState(true);
 const [show,setShow]=useState(true)
 const [img,setImg]=useState("")
     const [isLoading, setLoading] = useState(true);
@@ -17,7 +17,7 @@ const [img,setImg]=useState("")
 
     const [message, setMessage] = useState('');
     const [wrong, setWrong] = useState('');
-    const [currentQuestion, setCurrentQuestion] = useState(0);
+    const [count, setCount] = useState(0);
     const navigate= useNavigate();
 
 
@@ -75,14 +75,14 @@ const [img,setImg]=useState("")
         if (message === '') {
             setWrong("please type something")
         } else {
-            anscheck();
+
             const options = {method: 'GET',headers: {Authorization: 'Basic '+btoa(localStorage.getItem('username')+':'+localStorage.getItem('password'))}};
 
             const res = await fetch('https://oyster-app-cmvre.ondigitalocean.app/questions/validate?level=1&qid='+tem.q_id+'&answer='+message, options)
 
 
             if (res.status === 200) {
-
+setRedirect(false);
 
 
                 setWrong("Correct answer");
@@ -123,13 +123,26 @@ const [img,setImg]=useState("")
         }
         else {
             
-            console.log("not resolved");
+            console.log("");
         }
 
 
 
 
     }
+
+    useEffect(()=>{
+        const interval=setInterval(() =>{
+            if(redirect==true) {
+                anscheck()
+            }
+            else{
+                console.log("")
+            }
+        },10000);
+    return ()=>clearInterval(interval);
+    },[anscheck])
+
 
 
     if(isLoading){

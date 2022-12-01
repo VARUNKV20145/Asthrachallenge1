@@ -4,7 +4,7 @@ import axios from 'axios';
 import {useNavigate} from "react-router-dom";
 import {useState} from "react";
 function Login() {
-    const [message,setMessage]=useState(null)
+    const [message,setMessage]=useState("")
     const navigate= useNavigate();
     const {register, handleSubmit} = useForm();
     const onSubmit = async data => {
@@ -26,7 +26,7 @@ function Login() {
 
         }
         else{
-            console.log("failed to login")
+            console.log("Error occured")
         }
 
 

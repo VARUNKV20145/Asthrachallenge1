@@ -28,7 +28,7 @@ function Homepage() {
         }
         useEffect(()=>{
             fetchData();
-        }, [])
+        }, [fetchData])
 
 
 

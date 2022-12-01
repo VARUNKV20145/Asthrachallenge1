@@ -183,8 +183,8 @@ setRedirect(false);
 
             </div>
             {show? <p>{tem.question}</p>:<p></p>}
-            <div className="wrap-top">
-                {copy&&<CopyToClipboard id="copy" value="Caution" text={"QSBzcGlkZXIgaXMgdHJ5aW5nIHRvIGJ1aWxkIGEgd2ViIGZvciBpdHNlbGYuIEl0IGRvdWJsZXMgdGhlIHdvcmsgZG9uZSBldmVyeSBkYXkuIElmIHRoZSBzcGlkZXIgY29tcGxldGVseSBidWlsdCB0aGUgd2ViIGluIDUwIGRheXMsIGhvdyBtYW55IGRheXMgZGlkIGl0IHRha2UgZm9yIHRoZSBzcGlkZXIgdG8gYnVpbGQgMjUlIG9mIHRoZSB3ZWI/"} onCopy={() => window.alert("Copied to Clipboard")}>
+              <div className="wrap-top">
+                {show&&copy&&<CopyToClipboard id="copy" value="Caution" text={"QSBzcGlkZXIgaXMgdHJ5aW5nIHRvIGJ1aWxkIGEgd2ViIGZvciBpdHNlbGYuIEl0IGRvdWJsZXMgdGhlIHdvcmsgZG9uZSBldmVyeSBkYXkuIElmIHRoZSBzcGlkZXIgY29tcGxldGVseSBidWlsdCB0aGUgd2ViIGluIDUwIGRheXMsIGhvdyBtYW55IGRheXMgZGlkIGl0IHRha2UgZm9yIHRoZSBzcGlkZXIgdG8gYnVpbGQgMjUlIG9mIHRoZSB3ZWI/"} onCopy={() => window.alert("Copied to Clipboard")}>
 
                     <p className="copy">Don't Touch</p>
                 </CopyToClipboard>}

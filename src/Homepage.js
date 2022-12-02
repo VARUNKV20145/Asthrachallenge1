@@ -3,7 +3,8 @@ import { useEffect, useState} from "react";
 function Homepage() {
 
     const [tem, setTem] = useState()
-    const [limit,setLimit]=useState(6)
+    const [loading,setLoading]=useState(false)
+
 
 
 
@@ -22,10 +23,21 @@ function Homepage() {
                     setTem(data);
 
 
+
+
                 })
 
 
-        }
+
+
+
+
+            setTimeout(() => {
+                setLoading(true);
+
+
+            }, 2000);
+             }
         useEffect(()=>{
             fetchData();
         }, [fetchData])
@@ -33,7 +45,23 @@ function Homepage() {
 
 
 
+if(!loading){
+    return (
+        <div className="front-wrap">
+            <h1 className="front-heading">BLACKOUT</h1>
+            <div className="grid-container">
+                <div id="aidiv" className="loading loading--center loading--typing loading--animation">An AI has gone Rogue</div>
+                <div id="loaddiv" className="loading loading--center loading--glitch loading--animation" data-title="Loading...">
+                    Loading...
+                </div>
 
+            </div>
+        </div>
+
+    );
+
+
+}
 
 
     return (

@@ -55,8 +55,15 @@ const [img,setImg]=useState("")
 
 
 
+                    setTimeout(() => {
 
-                    setLoading(false);
+                        setLoading(false);
+
+
+
+                    }, 1500);
+
+
                 })
                 .catch(error => {
                     console.log("Error fetching questions")
@@ -152,9 +159,9 @@ setRedirect(false);
 
                     <div className="wrap-top">
 
-                        <div id="quote">
-
-                            <p id="load">Don't panic... AHHHHH!</p>
+                        <div  className="loading loading--center loading--glitch loading--animation"
+                             data-title="Loading...">
+                            Loading...
                         </div>
 
                         <div id="author-source" className="clearfix">
